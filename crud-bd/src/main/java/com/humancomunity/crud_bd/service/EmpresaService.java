@@ -1,5 +1,7 @@
-package com.humancomunity.crud_bd;
+package com.humancomunity.crud_bd.service;
 
+import com.humancomunity.crud_bd.model.Empresa;
+import com.humancomunity.crud_bd.repository.EmpresaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

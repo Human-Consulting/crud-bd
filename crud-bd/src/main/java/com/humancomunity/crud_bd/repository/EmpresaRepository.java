@@ -1,5 +1,6 @@
-package com.humancomunity.crud_bd;
+package com.humancomunity.crud_bd.repository;
 
+import com.humancomunity.crud_bd.model.Empresa;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
@@ -14,13 +15,12 @@ public class EmpresaRepository {
     }
 
     public Empresa adicionarEmpresa(Empresa empresa) {
-        String sql = "INSERT INTO empresas (cnpj, nome, email, telefone) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO empresas (cnpj, nome, idDiretor) VALUES (?, ?, ?)";
 
         int result = jdbcClient.sql(sql)
                 .param(empresa.getCnpj())
                 .param(empresa.getNome())
-                .param(empresa.getEmail())
-                .param(empresa.getTelefone())
+                .param(empresa.getDiretor())
                 .update();
 
         if (result > 0) {
@@ -42,13 +42,12 @@ public class EmpresaRepository {
     }
 
     public Empresa atualizarEmpresa(Integer id, Empresa empresa) {
-        String sql = "UPDATE empresas SET cnpj = ?,  nome = ?, email = ?, telefone = ? WHERE id = ?";
+        String sql = "UPDATE empresas SET cnpj = ?,  nome = ?, diretor = ? WHERE id = ?";
 
         int result = jdbcClient.sql(sql)
                 .param(empresa.getCnpj())
                 .param(empresa.getNome())
-                .param(empresa.getEmail())
-                .param(empresa.getTelefone())
+                .param(empresa.getDiretor())
                 .param(id)
                 .update();
 

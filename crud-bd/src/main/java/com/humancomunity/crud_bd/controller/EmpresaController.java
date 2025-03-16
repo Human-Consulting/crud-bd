@@ -1,6 +1,7 @@
-package com.humancomunity.crud_bd;
+package com.humancomunity.crud_bd.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.humancomunity.crud_bd.model.Empresa;
+import com.humancomunity.crud_bd.service.EmpresaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

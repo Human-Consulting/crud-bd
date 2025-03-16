@@ -1,11 +1,10 @@
-package com.humancomunity.crud_bd;
+package com.humancomunity.crud_bd.model;
 
 public class Empresa {
     private Integer id;
     private String cnpj;
     private String nome;
-    private String email;
-    private String telefone;
+    private Integer diretor;
 
     public Integer getId() {
         return id;
@@ -31,19 +30,11 @@ public class Empresa {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getDiretor() {
+        return diretor;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setDiretor(Integer diretor) {
+        this.diretor = diretor;
     }
 }
